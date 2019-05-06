@@ -1,0 +1,2 @@
+class Hawker < ApplicationRecord
+end
