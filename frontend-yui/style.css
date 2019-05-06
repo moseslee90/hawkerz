@@ -1,0 +1,35 @@
+.navbar,.btn-group,.hawker-show-container {
+    font-family: 'Hind Vadodara', sans-serif;
+}
+
+.carousel-item {
+    height: 100vh;
+    /* min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+} 
+
+.carousel-caption {
+    top: 40%;
+    bottom: auto;
+}
+
+.title {
+    font-size: 4vw;
+    font-family: 'Shojumaru', cursive;
+}
+
+.hawker-show-h3 {
+    padding-bottom: 20px;
+}
+
+.flex-column { 
+    max-width : 260px;
+}
+
+.img-fluid {
+    margin: 5px;
+}
