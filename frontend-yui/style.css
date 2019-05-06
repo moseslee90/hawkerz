@@ -33,3 +33,13 @@
 .img-fluid {
     margin: 5px;
 }
+
+.fa-star,.fa-star-half-alt{
+    color: #FFB20D;
+}
+
+
+.second-navbar{     
+    position: sticky; 
+    bottom: 0;
+}
