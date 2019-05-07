@@ -46,22 +46,24 @@
     z-index: 1030;
 }
 
-/* .comment-circle {
-    border-radius: 50%;
-    background-color: red;
-    height: 50px;
-    width: 50px;
-    vertical-align: middle;
-    display: table-cell;
-} */
 
 .comment-circle  {
     border-radius: 50%;
-    background-color: red;
+    background-color: #FF8D8C;
     height: 50px;
     width: 50px;    
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: auto;
+}
+
+.comment-initial {
+    margin: auto;
+}
+
+.test-div {
+  height: 60vh;
+  width: 80vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+
 }
