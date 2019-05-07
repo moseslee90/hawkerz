@@ -22,6 +22,10 @@
     font-family: 'Shojumaru', cursive;
 }
 
+/* .dropdown-toggle {
+    font-size: 1.5vw;
+} */
+
 .hawker-show-h3 {
     padding-bottom: 20px;
 }
@@ -38,8 +42,26 @@
     color: #FFB20D;
 }
 
+.sticky-top {
+    z-index: 1030;
+}
 
-.second-navbar{     
-    position: sticky; 
-    bottom: 0;
+/* .comment-circle {
+    border-radius: 50%;
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    display: table-cell;
+} */
+
+.comment-circle  {
+    border-radius: 50%;
+    background-color: red;
+    height: 50px;
+    width: 50px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }

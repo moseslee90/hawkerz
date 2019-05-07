@@ -6,7 +6,6 @@
         <title>hawker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -14,8 +13,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara|Shojumaru" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
-
 
 
     <body>
@@ -23,7 +22,7 @@
             <div class="d-flex flex-grow-1">
                 <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
                 <a class="navbar-brand d-none d-lg-inline-block" href="#">
-                    HOME
+                    <i class="fas fa-home"></i>
                 </a>
                 <a class="navbar-brand-two mx-auto mt-2 d-lg-none d-inline-block text-body" href="#" class="text-decoration-none">
                     <b>HAWKERz</b>  
@@ -47,14 +46,7 @@
                 </ul>
             </div>
         </nav>
-                    
-
-
-
-
-
-
-        
+                         
         <div class="container hawker-show-container">
             <div>
                 <img src="images/fishball.jpeg" class="img-fluid" alt="Responsive image">
@@ -62,7 +54,7 @@
 
 
             <div class="container-second" data-spy="scroll" data-offset="60" data-target="#myNavbar2">
-                <nav class="navbar navbar-expand-md navbar-light border-bottom m-2 second-navbar" id="myNavbar2">
+                <nav class="navbar navbar-expand-md navbar-light border-bottom m-2 second-navbar sticky-top" id="myNavbar2">
                     <div class="container">
                             <!-- <a href="#" class="navbar-brand">Navbar</a> -->
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -104,21 +96,6 @@
                                 Ut enim ad minim veniam, quis nostrud exercitation
                                 ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
                                 </p>    
                             </div>
 
@@ -148,33 +125,49 @@
 
                             <div class="row border-bottom my-3 p-5" id="section3">
                                 <h3 class="hawker-show-h3"><b>Reviews</b></h3>
-                                <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                </p>
+
+                                <div class="row m-3 border-bottom">
+                                    <div class="col-3">
+                                        <div>
+                                        <div class="comment-circle text-center">
+                                            Y
+                                        </div>
+                                    </div>
+                                        <br>
+                                        <p class="text-center">name goes here</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <p>
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2
+                                            <br><br>
+                                            "Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row m-3 border-bottom">
+                                    <div class="col-3">
+                                        <div>
+                                        <div class="comment-circle text-center">
+                                            Y
+                                        </div>
+                                    </div>
+                                        <br>
+                                        <p class="text-center">name goes here</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <p>
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2
+                                            <br><br>
+                                            "Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
             
