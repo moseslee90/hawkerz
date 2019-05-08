@@ -1,0 +1,21 @@
+
+
+.col-6 {
+	height: 180px;
+}
+
+.border {
+	height: 300px;
+}
+
+.form-group {
+	width: 300px;
+}
+
+form {
+	padding: 10px;
+}
+
+body {
+	font-family: 'Hind Vadodara', sans-serif;
+}
