@@ -13,7 +13,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; */
-} 
+}
 
 .carousel-caption {
     top: 40%;
@@ -33,10 +33,38 @@
     padding-bottom: 20px;
 }
 
-.flex-column { 
+.flex-column {
     max-width : 260px;
 }
 
 .img-fluid {
     margin: 5px;
+}
+
+
+.col-6 {
+	height: 180px;
+
+}
+
+.border {
+	height: 300px;
+}
+
+.form-group {
+	width: 300px;
+}
+
+form {
+	padding: 10px;
+}
+h5 {
+		font-family: 'Hind Vadodara', sans-serif;
+}
+
+h6 {
+		font-family: 'Hind Vadodara', sans-serif;
+}
+footer {
+background-color: #3E4551;
 }
