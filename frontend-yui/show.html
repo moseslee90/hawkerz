@@ -6,6 +6,9 @@
         <title>hawker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -136,6 +139,13 @@
                                             <img src="images/hawkers-cooking.jpeg" class="img-fluid">
                                             <img src="images/hawkers-people.jpeg" class="img-fluid"> 
                                         </div>
+                                        <div class="m-5">
+                                            <form action="#">
+                                                <i class="fas fa-camera"></i>&nbsp;Photo URL:&nbsp;
+                                                <input type="text" name="#" class="photo-form">
+                                                <input type="submit" value="Submit" class="btn btn-sm btn-outline-secondary">
+                                            </form> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -194,6 +204,18 @@
                         <!-- Info column: On the right side -->
                         <!-- ------------------------------ -->
                         <div class="col-xs-5 col-sm-3 col-lg-4 mt-3 pl-5">
+
+                            <div class="row my-3 p-3">
+                                <!-- google map comes here -->
+                                <div id="floating-panel">
+                                    <input id="address" type="textbox" value="Sydney, NSW">
+                                    <input id="submit" type="button" value="Geocode">
+                                </div>
+                                <div id="map"></div>
+                            </div>
+
+
+
                             <div class="row my-3 p-3">
                                 <p><i class="fas fa-map-marker-alt"></i>&nbsp;Address</p>
                                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing"</p>
@@ -210,6 +232,7 @@
                                 <p><i class="fas fa-external-link-alt"></i>&nbsp;Website</p>
                                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing"</p>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -218,6 +241,7 @@
             </div>
 
         </div>
-        <script src="" async defer></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJoSvMHbfjl06D5vPh6QEhweUc4GL90zc&callback=initMap"></script>
+        <script src="show.js" async defer></script>
     </body>
 </html>
