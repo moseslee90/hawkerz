@@ -6,7 +6,6 @@
         <title>hawker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -14,19 +13,25 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara|Shojumaru" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
 
 
 
+
+
     <body>
+        <!-- ----------- -->
+        <!-- Main Navbar -->
+        <!-- ----------- -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="d-flex flex-grow-1">
-                <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+                <!-- <span class="w-100 d-lg-none d-block">hidden spacer to center brand on mobile</span>  -->
                 <a class="navbar-brand d-none d-lg-inline-block" href="#">
-                    HOME
+                    <i class="fas fa-home"></i>
                 </a>
-                <a class="navbar-brand-two mx-auto mt-2 d-lg-none d-inline-block text-body" href="#" class="text-decoration-none">
-                    <b>HAWKERz</b>  
+                <a class="navbar-brand-two mx-auto mt-2 d-lg-none d-inline-block text-body text-decoration-none" href="#">
+                    <i class="fas fa-home"></i>  
                     <!-- <img src="//placehold.it/40?text=LOGO" alt="logo"> -->
                 </a>
                 <div class="w-100 text-right">
@@ -47,22 +52,19 @@
                 </ul>
             </div>
         </nav>
-                    
+                         
+
+        <div class="show-main-img" style="background: url('images/fishball.jpeg'); background-position: center;"></div>
 
 
 
-
-
-
-        
         <div class="container hawker-show-container">
-            <div>
-                <img src="images/fishball.jpeg" class="img-fluid" alt="Responsive image">
-            </div>
-
-
+        
+            <!-- ------------------------------------- -->
+            <!-- Sub Navbar for Overview/Photos/Revies -->
+            <!-- ------------------------------------- -->
             <div class="container-second" data-spy="scroll" data-offset="60" data-target="#myNavbar2">
-                <nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom m-2" id="myNavbar2">
+                <nav class="navbar navbar-expand-md navbar-light border-bottom m-2 second-navbar sticky-top" id="myNavbar2">
                     <div class="container">
                             <!-- <a href="#" class="navbar-brand">Navbar</a> -->
                         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -86,6 +88,9 @@
 
 
 
+                <!-- ---------------------------- -->
+                <!-- Main: Overview/Photos/Review -->
+                <!-- -------------- ---------------->
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-7 col-sm-9 col-lg-8">
@@ -93,35 +98,23 @@
                                 <h1><b>The name of the hawker goes here</b></h1>
                             </div>
                             <div class="row border-bottom my-3 p-5" id="section1">
-                                <h3 class="hawker-show-h3"><b>Overview</b></h3>
-                                <h5>star</h5>
-                                <!-- <div class="row pt-5">
-                                star&nbsp;&nbsp;<i class="far fa-comments">&nbsp;</i>
-                                </div> -->
+                                <h3 class="hawker-show-h3"><b>Overview</b></h3> 
                                 <p>
+                                <!-- --------------------------------------------------- -->
+                                <!-- Need to add rating stars depends on the input rates -->
+                                <!-- --------------------------------------------------- -->
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2&nbsp;&nbsp;&nbsp;&nbsp;
+                                <i class="far fa-comments"></i>&nbsp;4 reviews<br><br>
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing
                                 elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam, quis nostrud exercitation
                                 ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
                                 </p>    
                             </div>
+
+
 
                             <div class="row border-bottom my-3 p-5" id="section2">
                                 <h3 class="hawker-show-h3"><b>Photos</b></h3>
@@ -147,38 +140,59 @@
                                 </div>
                             </div>
 
-                            <div class="row border-bottom my-3 p-5" id="section3">
+
+
+                            <div class="row my-3 p-5" id="section3">
                                 <h3 class="hawker-show-h3"><b>Reviews</b></h3>
-                                <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint"
-                                </p>
+
+                                <div class="row m-3 p-3 border-bottom">
+                                    <div class="col-xs-3 col-sm-5 col-lg-4">
+                                        <div class="comment-circle d-flex justify-content-center align-items-center text-center">
+                                            <p class="comment-initial">Y</p>
+                                        </div>
+                                        <br>
+                                        <p class="text-center">name goes here</p>
+                                    </div>
+                                    <div class="col-xs-9 col-sm-7 col-lg-8">
+                                        <p>
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2
+                                            <br><br>
+                                            "Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="row m-3 p-3 border-bottom">
+                                    <div class="col-xs-3 col-sm-5 col-lg-4">
+                                        <div class="comment-circle d-flex justify-content-center align-items-center text-center">
+                                            <p class="comment-initial">Y</p>
+                                        </div>
+                                        <br>
+                                        <p class="text-center">name goes here</p>
+                                    </div>
+                                    <div class="col-xs-9 col-sm-7 col-lg-8">
+                                        <p>
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2
+                                            <br><br>
+                                            "Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
             
+
+
+                        <!-- ------------------------------ -->
+                        <!-- Info column: On the right side -->
+                        <!-- ------------------------------ -->
                         <div class="col-xs-5 col-sm-3 col-lg-4 mt-3 pl-5">
                             <div class="row my-3 p-3">
                                 <p><i class="fas fa-map-marker-alt"></i>&nbsp;Address</p>
@@ -190,6 +204,10 @@
                             </div>
                             <div class="row my-3 p-3">
                                 <p><i class="fas fa-clock"></i>&nbsp;Hours of operation</p>
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing"</p>
+                            </div>
+                            <div class="row my-3 p-3">
+                                <p><i class="fas fa-external-link-alt"></i>&nbsp;Website</p>
                                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing"</p>
                             </div>
                         </div>
