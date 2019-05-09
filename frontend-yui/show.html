@@ -6,9 +6,7 @@
         <title>hawker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -19,17 +17,13 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-
-
-
-
+    
     <body>
         <!-- ----------- -->
         <!-- Main Navbar -->
         <!-- ----------- -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="d-flex flex-grow-1">
-                <!-- <span class="w-100 d-lg-none d-block">hidden spacer to center brand on mobile</span>  -->
                 <a class="navbar-brand d-none d-lg-inline-block" href="#">
                     <i class="fas fa-home"></i>
                 </a>
@@ -43,7 +37,6 @@
                     </button>
                 </div>
             </div>
-            
             <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
                 <ul class="navbar-nav ml-auto flex-nowrap">
                     <li class="nav-item">
@@ -55,14 +48,11 @@
                 </ul>
             </div>
         </nav>
-                         
+
 
         <div class="hawker-show-main-img" style="background: url('images/fishball.jpeg'); background-position: center;"></div>
 
-
-
         <div class="container hawker-show-container">
-        
             <!-- ------------------------------------- -->
             <!-- Sub Navbar for Overview/Photos/Revies -->
             <!-- ------------------------------------- -->
@@ -88,7 +78,6 @@
                         </div>
                     </div>
                 </nav>
-
 
 
                 <!-- ---------------------------- -->
@@ -118,7 +107,6 @@
                             </div>
 
 
-
                             <div class="row border-bottom my-3 p-5" id="section2">
                                 <h3 class="hawker-show-h3"><b>Photos</b></h3>
                                 <div class="container">
@@ -135,8 +123,7 @@
                                             <img src="images/noodles.jpeg" class="img-fluid hawker-show-flex-img">
                                             <img src="images/satay.jpeg" class="img-fluid hawker-show-flex-img">
                                         </div>
-                                        <div class="d-flex flex-column hawker-show-flex
-                                        ">
+                                        <div class="d-flex flex-column hawker-show-flex">
                                             <img src="images/hawkers-cooking.jpeg" class="img-fluid hawker-show-flex-img">
                                             <img src="images/hawkers-people.jpeg" class="img-fluid hawker-show-flex-img"> 
                                         </div>
@@ -144,7 +131,7 @@
                                             <form action="#">
                                                 <i class="fas fa-camera"></i>&nbsp;Photo URL:&nbsp;
                                                 <input type="text" name="#" class="hawker-show-photo-form">
-                                                <input type="submit" value="Submit" class="btn btn-sm btn-outline-secondary">
+                                                <input type="submit" value="Submit" class="btn btn-sm btn-secondary">
                                             </form> 
                                         </div>
                                     </div>
@@ -152,10 +139,8 @@
                             </div>
 
 
-
                             <div class="row my-3 p-5" id="section3">
                                 <h3 class="hawker-show-h3"><b>Reviews</b></h3>
-
                                 <div class="row m-3 p-3 border-bottom">
                                     <div class="col-xs-3 col-sm-5 col-lg-4">
                                         <div class="comment-circle d-flex justify-content-center align-items-center text-center">
@@ -175,7 +160,6 @@
                                     </div>
                                 </div>
 
-                                
 
                                 <div class="row m-3 p-3 border-bottom">
                                     <div class="col-xs-3 col-sm-5 col-lg-4">
@@ -195,33 +179,17 @@
                                         </p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
             
-
 
                         <!-- ------------------------------ -->
                         <!-- Info column: On the right side -->
                         <!-- ------------------------------ -->
                         <div class="col-xs-5 col-sm-3 col-md-5 col-lg-4 mt-3 pl-5">
-                                <div class="row">
-                            <div id="map"></div>
-                                </div>
-
-
-
-                            <!-- <div id="floating-panel">
-                                    <input id="address" type="textbox" value="Sydney, NSW">
-                                    <input id="submit" type="button" value="Geocode">
-                                </div>
-                                <div id="map"></div>
-                            </div> -->
-
-
-
-
-
+                            <div class="row">
+                                <div id="hawker-show-map" latitude="1.274340" longitude="103.846704"></div>
+                            </div>
                             <div class="row my-3 p-3">
                                 <p><i class="fas fa-map-marker-alt"></i>&nbsp;Address</p>
                                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing"</p>
@@ -238,14 +206,10 @@
                                 <p><i class="fas fa-external-link-alt"></i>&nbsp;Website</p>
                                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing"</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJoSvMHbfjl06D5vPh6QEhweUc4GL90zc&callback=initMap"></script>
         <script src="show.js" async defer></script>

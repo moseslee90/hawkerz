@@ -1,36 +1,13 @@
-// function initMap() {
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//       zoom: 8,
-//       center: {lat: -34.397, lng: 150.644}
-//     });
-//     var geocoder = new google.maps.Geocoder();
-
-//     document.getElementById('submit').addEventListener('click', function() {
-//       geocodeAddress(geocoder, map);
-//     });
-//   }
-
-//   function geocodeAddress(geocoder, resultsMap) {
-//     var address = document.getElementById('address').value;
-//     geocoder.geocode({'address': address}, function(results, status) {
-//       if (status === 'OK') {
-//         resultsMap.setCenter(results[0].geometry.location);
-//         var marker = new google.maps.Marker({
-//           map: resultsMap,
-//           position: results[0].geometry.location
-//         });
-//       } else {
-//         alert('Geocode was not successful for the following reason: ' + status);
-//       }
-//     });
-//   }
-
-
+let mapHTML = document.getElementById('hawker-show-map');
+let latitude = parseFloat(mapHTML.getAttribute('latitude'));
+let longitude = parseFloat(mapHTML.getAttribute('longitude'));
 
 var map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+        var hawker = {lat: latitude, lng: longitude};
+        map = new google.maps.Map(document.getElementById('hawker-show-map'), {  
+          center: {lat: latitude, lng: longitude},
+          zoom: 15
         });
+        var marker = new google.maps.Marker({position: hawker, map: map});
       }
