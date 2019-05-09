@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Form Create</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara|Shojumaru" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="Style.css">
+    </head>
+
+
+
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="d-flex flex-grow-1">
+                <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+                <a class="navbar-brand d-none d-lg-inline-block" href="#">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a class="navbar-brand-two mx-auto mt-2 d-lg-none d-inline-block text-body" href="#" class="text-decoration-none">
+                  <b>HAWKERz</b>
+                    <!-- <img src="//placehold.it/40?text=LOGO" alt="logo"> -->
+                </a>
+                <div class="w-100 text-right">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                <ul class="navbar-nav ml-auto flex-nowrap">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item nav-active">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link m-2 menu-item">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<form action="/action_page.php" >
+  <div class="form-group">
+    <label for="Name">Hawker Centre Name:</label>
+    <input type="Name" class="form-control" id="Name">
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Hawkerz Description:</label>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Hawker Centre Address</label>
+    <input type="address" class="form-control" id="address">
+  </div>
+
+  <div class="form-group">
+    <label for="photos">Hawkerz Website</label>
+    <input type="photos" class="form-control" id="photos">
+  </div>
+
+<!-- <br> -->
+
+<!--   <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Number of Food Stalls
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">0-30</a>
+    <a class="dropdown-item" href="#">31-60</a>
+    <a class="dropdown-item" href="#">61-90</a>
+    <a class="dropdown-item" href="#">90 & above</a>
+  </div>
+</div> -->
+<br>
+
+ <label for="photos">Upload Photos:</label>
+  <div class="file-field">
+    <div class="btn btn-secondary btn-sm">
+      <input type="file">
+  </div>
+  </div>
+
+  <br>
+
+  <div class="file-field">
+    <div class="btn btn-secondary btn-sm">
+      <input type="file">
+  </div>
+  </div>
+
+  <br>
+
+  <div class="file-field">
+    <div class="btn btn-secondary btn-sm">
+      <input type="file">
+  </div>
+  </div>
+
+  <br>
+
+  <div class="file-field">
+    <div class="btn btn-secondary btn-sm">
+      <input type="file">
+  </div>
+  </div>
+
+  <br>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

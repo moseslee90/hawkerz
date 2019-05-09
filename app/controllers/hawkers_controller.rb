@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class HawkersController < ApplicationController
+  def home
+    render 'home'
+  end
+
   def index
     @hawkers = Hawker.all
   end

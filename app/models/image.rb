@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-class Comment < ApplicationRecord
-  belongs_to :user
+class Image < ApplicationRecord
   belongs_to :hawker
 end
