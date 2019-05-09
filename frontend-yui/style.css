@@ -29,7 +29,6 @@
     border-radius: 5px;
 }
 
-
 .hawker-show-h3 {
     padding-bottom: 20px;
 }
@@ -71,39 +70,7 @@
 
 }
 
-
-
-
-
-
-
-#map {
+#hawker-show-map {
     width: 500px;
     height: 300px;
 }
-/* html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-#floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 25%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
-}
- */
-
-
-
-
-
-
-
