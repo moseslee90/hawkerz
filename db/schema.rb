@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_06_071623) do
+ActiveRecord::Schema.define(version: 2019_05_09_072837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 2019_05_06_071623) do
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "hero_image_url"
+    t.text "opening_hours"
+    t.text "closing_hours"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "images", force: :cascade do |t|
