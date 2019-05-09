@@ -61,3 +61,20 @@
 .footer-css {
 background-color: #3E4551;
 }
+
+#map {
+width: 40vw;
+height: 50vh;
+}
+
+#infowindow-content .title {
+font-weight: bold;
+}
+
+#infowindow-content {
+display: none;
+}
+
+#map #infowindow-content {
+display: inline;
+}

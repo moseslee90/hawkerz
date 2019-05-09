@@ -138,6 +138,23 @@
 
 <br>
 
+ <div id="map"></div>
+            <div id="infowindow-content">
+            <img src="" width="16" height="16" id="place-icon">
+            <span id="place-name"  class="title"></span><br>
+            <span id="place-address"></span>
+        </div>
+
+        <div class="pac-card" id="pac-card">
+            <div id="pac-container">
+                <input id="pac-input" type="text" name="" placeholder="Enter a location">
+                <input type="hidden" name="latitude" id="lat"></input>
+                <input type="hidden" name="longitude" id="lng"></input>
+            </div>
+        </div>
+
+<br>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </form>
@@ -154,6 +171,7 @@
 
       <!--Grid column-->
       <div class="col-md-6 mb-4">
+      	<br>
 
         <!-- Form -->
         <form class="form-inline">
@@ -168,7 +186,7 @@
 
       <!--Grid column-->
       <div class="col-md-6 mb-4">
-
+      	<br>
         <form class="input-group">
           <input type="text" class="form-control form-control-sm" placeholder="Your email"
             aria-label="Your email" aria-describedby="basic-addon2">
@@ -222,3 +240,9 @@
 
 
 </footer>
+
+<script src="/javascripts/new/gmap.js" type="text/javascript" />
+<script src="gmap.js" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJoSvMHbfjl06D5vPh6QEhweUc4GL90zc&libraries=places&callback=initMap"
+async defer></script>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
