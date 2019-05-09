@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="gmap.css">
+    </head>
+    
+    <body>
+        <div id="map"></div>
+            <div id="infowindow-content">
+            <img src="" width="16" height="16" id="place-icon">
+            <span id="place-name"  class="title"></span><br>
+            <span id="place-address"></span>
+        </div>
+
+        <div class="pac-card" id="pac-card">
+            <div id="pac-container">
+                <input id="pac-input" type="text" name="" placeholder="Enter a location">
+                <input type="hidden" name="latitude" id="lat"></input>
+                <input type="hidden" name="longitude" id="lng"></input>
+            </div>
+        </div>
+        
+        <script src="gmap.js" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJoSvMHbfjl06D5vPh6QEhweUc4GL90zc&libraries=places&callback=initMap"
+        async defer></script>
+    </body>
+</html>
