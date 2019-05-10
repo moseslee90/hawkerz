@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_09_072837) do
+ActiveRecord::Schema.define(version: 2019_05_10_062055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2019_05_09_072837) do
     t.bigint "hawker_id"
     t.index ["hawker_id"], name: "index_comments_on_hawker_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "comment_id"
+    t.index ["comment_id"], name: "index_foods_on_comment_id"
   end
 
   create_table "hawkers", force: :cascade do |t|
@@ -60,4 +68,5 @@ ActiveRecord::Schema.define(version: 2019_05_09_072837) do
 
   add_foreign_key "comments", "hawkers"
   add_foreign_key "comments", "users"
+  add_foreign_key "foods", "comments"
 end

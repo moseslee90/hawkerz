@@ -1,0 +1,18 @@
+<div>
+	<h1>
+		Show page for comment
+	</h1>
+	<p>
+		<strong>Comment:</strong>
+		<%= @comment.text %>
+	</p>
+	<p>
+		<strong>Rating:</strong>
+		<%= @comment.rating %>
+	</p>
+	<ol>
+		<% for food in @comment.foods %>
+			<li><%=h food.name %></li>
+		<% end %>
+	</ol>
+</div>
