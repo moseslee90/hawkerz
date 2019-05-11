@@ -52,6 +52,9 @@ class HawkersController < ApplicationController
   private
 
   def hawker_params
-    params.require(:hawker).permit
+    params.require(:hawker).permit(
+      :name, :description, :address, :hero_image_url,
+      :opening_hours, :closing_hours, :latitude, :longitude, :site_url
+    )
   end
 end

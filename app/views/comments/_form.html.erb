@@ -1,0 +1,32 @@
+<%= form_for @comment do |f| %>
+
+	<% if @comment.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@comment.errors.count, "error") %> prohibited
+				this comment from being saved:
+			</h2>
+			<ul>
+				<% @comment.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :text %><br />
+		<%= f.text_field :text %>
+	</p>
+	<p>
+		<%= f.label :rating %><br />
+		<%= f.text_field :rating %>
+	</p>
+	<%= f.fields_for :foods do |builder| %>
+		<p>
+			<%= builder.label :name, "Food"%><br />
+			<%= builder.text_area :name, :rows => 1 %>
+		</p>
+	<% end %>
+	<p><%= f.submit "Submit" %></p>
+<% end %>
