@@ -10,8 +10,9 @@ class HawkersController < ApplicationController
   end
 
   def show
-    @hawker = Hawker.find(params[:id])
+    @hawker = Hawker.find(params[:id])  
   end
+
 
   def new
     @hawker = Hawker.new

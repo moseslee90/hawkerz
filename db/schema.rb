@@ -21,10 +21,8 @@ ActiveRecord::Schema.define(version: 2019_05_09_072837) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.bigint "hawker_id"
     t.index ["hawker_id"], name: "index_comments_on_hawker_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "hawkers", force: :cascade do |t|
@@ -59,5 +57,4 @@ ActiveRecord::Schema.define(version: 2019_05_09_072837) do
   end
 
   add_foreign_key "comments", "hawkers"
-  add_foreign_key "comments", "users"
 end
