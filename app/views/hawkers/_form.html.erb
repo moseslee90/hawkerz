@@ -1,0 +1,100 @@
+<%= form_with model: @hawker, local: true do |f| %>
+
+	<% if @hawker.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@hawker.errors.count, "error") %> prohibited
+				this hawker from being saved:
+			</h2>
+			<ul>
+				<% @hawker.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-css">
+		<div class="form-group">
+			<%= f.label :name, 'Hawker Centre Name:' %><br/>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description, 'Hawker Description:' %><br/>
+			<%= f.text_area :description, :rows => 5, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :address, 'Address:' %><br/>
+			<%= f.text_field :address, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :hero_image_url, 'Hero Image URL:' %><br/>
+			<%= f.text_field :hero_image_url, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :site_url, 'Facebook or Website URL:' %><br/>
+			<%= f.text_field :site_url, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :opening_hours, 'Opening Hours' %>
+			<%= select_tag(:opening_hours, options_for_select([
+                ['0400'],
+                ['0500'],
+                ['0600'],
+                ['0700'],
+                ['0800'],
+                ['0900'],
+                ['1000'],
+            ]), class: "form-control") %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :closing_hours, 'Closing Hours' %>
+			<%= select_tag(:closing_hours, options_for_select([
+                ['1900'],
+                ['2000'],
+                ['2100'],
+                ['2200'],
+                ['2300'],
+                ['0000'],
+                ['0100'],
+                ['0200']
+            ]), class: "form-control") %>
+		</div>
+
+		<br>
+
+		<%= f.fields_for :images do |builder| %>
+			<div class="">
+				<%= builder.label :image_url, 'Insert Photo URL' %>
+				<%= builder.text_field :image_url, class: "form-control" %>
+			</div>
+		<% end %>
+
+		<br>
+
+		<div id="map"></div>
+		<div id="infowindow-content">
+			<img src="" width="16" height="16" id="place-icon">
+			<span id="place-name"  class="title"></span><br>
+			<span id="place-address"></span>
+		</div>
+
+		<div class="pac-card" id="pac-card">
+			<div id="pac-container">
+				<input id="pac-input" type="text" name="" placeholder="Enter a location">
+				<%= f.hidden_field 'latitude', id: 'lat' %>
+				<%= f.hidden_field 'longitude', id: 'lng' %>
+			</div>
+		</div>
+
+		<br>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+<% end %>

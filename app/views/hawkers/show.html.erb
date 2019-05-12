@@ -3,133 +3,128 @@
     'background: url(\'https://zone-thebestsingapore-bhxtb9xxzrrdpzhqr.netdna-ssl.com/wp-content/uploads/2014/07/Best-Hawker-Centre.jpg\'); background-size: cover;
   background-repeat: no-repeat; background-position: center'])%>
 
+<div class="container hawker-show-container">
+	<div class="container-second" data-spy="scroll" data-offset="60" data-target="#myNavbar2">
+		<nav class="navbar navbar-expand-md navbar-light border-bottom m-2 hawker-show-navbar sticky-top" id="myNavbar2">
+			<div class="container">
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="nav navbar-nav">
+						<li class="nav-item">
+							<a href="#section1" class="nav-link">Overview</a>
+						</li>
+						<li class="nav-item">
+							<a href="#section2" class="nav-link">Photos</a>
+						</li>
+						<li class="nav-item">
+							<a href="#section3" class="nav-link">Reviews</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-        <div class="container hawker-show-container">
-            <div class="container-second" data-spy="scroll" data-offset="60" data-target="#myNavbar2">
-                <nav class="navbar navbar-expand-md navbar-light border-bottom m-2 hawker-show-navbar sticky-top" id="myNavbar2">
-                    <div class="container">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item">
-                                    <a href="#section1" class="nav-link">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#section2" class="nav-link">Photos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#section3" class="nav-link">Reviews</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-7 col-sm-9 col-md-7 col-lg-8">
+					<div class="row border-bottom p-5">
+						<h1><b><%= @hawker.name%></b></h1>
+					</div>
+					<div class="row border-bottom my-3 p-5" id="section1">
+						<h3 class="hawker-show-h3"><b>Overview</b></h3>
+						<p>
+							<%#Stars will show depend on the number of rating%>
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2&nbsp;&nbsp;&nbsp;&nbsp;
+						<i class="far fa-comments"></i>
+						<%#The number will be replaced with the total review number%>
+						&nbsp;<span>4</span>&nbsp;reviews
+						<br>
+						<br>
+						<%= @hawker.description%>
+					</p>
+				</div>
 
+				<div class="row border-bottom my-3 p-5" id="section2">
+					<h3 class="hawker-show-h3"><b>Photos</b></h3>
+					<div class="container">
+						<div class="d-flex flex-row flex-wrap justify-content-center">
+							<div class="d-flex flex-column hawker-show-flex">
+								<img src=<%= image_path 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80' %> class="img-fluid hawker-show-flex-img">
+								<img src=<%= image_path(@hawker.hero_image_url) %> class="img-fluid hawker-show-flex-img">
+							</div>
+							<h1>
+								image generation starts here
+							</h1>
+							<% for image in @hawker.images %>
+								<div class="d-flex flex-column hawker-show-flex">
+									<img src=<%= image.image_url %> class="img-fluid hawker-show-flex-img">
+								</div>
+							<% end %>
+							<h1>
+								image generation ends here
+							</h1>
+							<div class="d-flex flex-column hawker-show-flex">
+								<img src=<%= image_path 'hawkers_index/hawkers-cooking.jpeg' %> class="img-fluid hawker-show-flex-img">
+								<img src=<%= image_path 'hawkers_index/hawkers-people.jpeg' %> class="img-fluid hawker-show-flex-img">
+							</div>
+							<div class="m-5">
+								<form action="#">
+									<i class="fas fa-camera"></i>&nbsp;Photo URL:&nbsp;
+									<input type="text" name="#" class="hawker-show-photo-form">
+									<input type="submit" value="Submit" class="btn btn-sm btn-secondary">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<div class="row my-3 p-5" id="section3">
+					<h3 class="hawker-show-h3"><b>Reviews</b></h3>
+					<% @hawker.comments.each do |comment| %>
+						<div class="row m-3 p-3 border-bottom w-100">
+							<div class="col-xs-3 col-sm-5 col-lg-4">
+								<div class="comment-circle d-flex justify-content-center align-items-center text-center">
+									<p class="comment-initial">Y</p>
+								</div>
+								<br>
+								<p class="text-center">name goes here</p>
+							</div>
+							<div class="col-xs-9 col-sm-7 col-lg-8">
+								<p>
+									<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2
+								<br>
+								<br>
+								<%= comment.text%>
+							</p>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-7 col-sm-9 col-md-7 col-lg-8">
-                            <div class="row border-bottom p-5">
-                                <h1><b><%= @hawker.name%></b></h1>
-                            </div>
-                            <div class="row border-bottom my-3 p-5" id="section1">
-                                <h3 class="hawker-show-h3"><b>Overview</b></h3> 
-                                <p>
-                                <%#Stars will show depend on the number of rating%>
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2&nbsp;&nbsp;&nbsp;&nbsp;
-                                <i class="far fa-comments"></i>
-                                <%#The number will be replaced with the total review number%>
-                                &nbsp;<span>4</span>&nbsp;reviews
-                                <br><br>
-                                <%= @hawker.description%>
-                                </p>    
-                            </div>
+		<div class="col-xs-5 col-sm-3 col-md-5 col-lg-4 mt-3 pl-5">
+			<div class="row">
+				<div id="hawker-show-map" latitude=<%= @hawker.latitude%> longitude=<%= @hawker.longitude%>></div>
+			</div>
+			<div class="row my-3 p-3 show-width">
+				<p><i class="fas fa-map-marker-alt"></i>&nbsp;Address</p>
+				<p><%= @hawker.address%></p>
+			</div>
+			<div class="row my-3 p-3 show-width">
+				<p><i class="fas fa-clock"></i>&nbsp;Hours of operation</p>
+				<p><%= @hawker.opening_hours%> - <%= @hawker.closing_hours%></p>
+			</div>
+			<div class="row my-3 p-3 show-width">
+				<p><i class="fas fa-external-link-alt"></i>&nbsp;Website</p>
+				<p><%= link_to(@hawker.hero_image_url) %></p>
+			</div>
+		</div>
 
+	</div>
+</div>
+</div>
+</div>
 
-
-                            <div class="row border-bottom my-3 p-5" id="section2">
-                                <h3 class="hawker-show-h3"><b>Photos</b></h3>
-                                <div class="container">
-                                    <div class="d-flex flex-row flex-wrap justify-content-center">
-                                        <div class="d-flex flex-column hawker-show-flex">
-                                            <img src=<%= image_path 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80' %> class="img-fluid hawker-show-flex-img">
-                                            <img src=<%= image_path(@hawker.hero_image_url) %> class="img-fluid hawker-show-flex-img">
-                                        </div>
-                                        <div class="d-flex flex-column hawker-show-flex">
-                                            <img src=<%= image_path 'hawkers_index/fishball.jpeg' %> class="img-fluid hawker-show-flex-img">
-                                            <img src=<%= image_path 'hawkers_index/hawkers-cooking.jpeg' %> class="img-fluid hawker-show-flex-img">
-                                        </div>
-                                        <div class="d-flex flex-column hawker-show-flex">
-                                            <img src=<%= image_path 'hawkers_index/noodles.jpeg' %> class="img-fluid hawker-show-flex-img">
-                                            <img src=<%= image_path 'hawkers_index/satay.jpeg' %> class="img-fluid hawker-show-flex-img">
-                                        </div>
-                                        <div class="d-flex flex-column hawker-show-flex">
-                                            <img src=<%= image_path 'hawkers_index/hawkers-cooking.jpeg' %> class="img-fluid hawker-show-flex-img">
-                                            <img src=<%= image_path 'hawkers_index/hawkers-people.jpeg' %> class="img-fluid hawker-show-flex-img"> 
-                                        </div>
-                                        <div class="m-5">
-                                            <form action="#">
-                                                <i class="fas fa-camera"></i>&nbsp;Photo URL:&nbsp;
-                                                <input type="text" name="#" class="hawker-show-photo-form">
-                                                <input type="submit" value="Submit" class="btn btn-sm btn-secondary">
-                                            </form> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        
-                            <div class="row my-3 p-5" id="section3">
-                                <h3 class="hawker-show-h3"><b>Reviews</b></h3>
-                                <% @hawker.comments.each do |comment| %>
-                                <div class="row m-3 p-3 border-bottom w-100">
-                                    <div class="col-xs-3 col-sm-5 col-lg-4">
-                                        <div class="comment-circle d-flex justify-content-center align-items-center text-center">
-                                            <p class="comment-initial">Y</p>
-                                        </div>
-                                        <br>
-                                        <p class="text-center">name goes here</p>
-                                    </div>
-                                    <div class="col-xs-9 col-sm-7 col-lg-8">
-                                        <p>
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2
-                                            <br><br>
-                                            <%= comment.text%>
-                                        </p>
-                                    </div>
-                                </div>
-                                <% end %>
-                            </div>
-                        </div>
-            
-
-                        
-                        <div class="col-xs-5 col-sm-3 col-md-5 col-lg-4 mt-3 pl-5">
-                            <div class="row">
-                                <div id="hawker-show-map" latitude=<%= @hawker.latitude%> longitude=<%= @hawker.longitude%>></div>
-                            </div>
-                            <div class="row my-3 p-3 show-width">
-                                <p><i class="fas fa-map-marker-alt"></i>&nbsp;Address</p>
-                                <p><%= @hawker.address%></p>
-                            </div>
-                            <div class="row my-3 p-3 show-width">
-                                <p><i class="fas fa-clock"></i>&nbsp;Hours of operation</p>
-                                <p><%= @hawker.opening_hours%> - <%= @hawker.closing_hours%></p>
-                            </div>
-                            <div class="row my-3 p-3 show-width">
-                                <p><i class="fas fa-external-link-alt"></i>&nbsp;Website</p>
-                                <p><%= link_to(@hawker.hero_image_url) %></p>
-                            </div>
-                        </div>
-                         
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJoSvMHbfjl06D5vPh6QEhweUc4GL90zc&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJoSvMHbfjl06D5vPh6QEhweUc4GL90zc&callback=initMap"></script>

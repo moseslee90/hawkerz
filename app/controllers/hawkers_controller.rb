@@ -10,16 +10,22 @@ class HawkersController < ApplicationController
   end
 
   def show
-    @hawker = Hawker.find(params[:id])  
+    @hawker = Hawker.find(params[:id])
   end
-
 
   def new
     @hawker = Hawker.new
+    3.times do
+      image = @hawker.images.build
+    end
   end
 
   def edit
     @hawker = Hawker.find(params[:id])
+    @comment = Comment.new
+    3.times do
+      food = @comment.foods.build
+    end
   end
 
   def create
@@ -54,7 +60,8 @@ class HawkersController < ApplicationController
   def hawker_params
     params.require(:hawker).permit(
       :name, :description, :address, :hero_image_url,
-      :opening_hours, :closing_hours, :latitude, :longitude, :site_url
+      :opening_hours, :closing_hours, :latitude, :longitude, :site_url,
+      images_attributes: [:image_url]
     )
   end
 end
