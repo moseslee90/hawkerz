@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class HawkersController < ApplicationController
+  before_action :authenticate_user!, except: %i[show index]
   def home
     render 'home'
   end
@@ -11,8 +12,7 @@ class HawkersController < ApplicationController
 
   def show
     @hawker = Hawker.find(params[:id])
-    @comment = Comment.new
-
+    @comment = @hawker.comments.build
     food = @comment.foods.build
   end
 

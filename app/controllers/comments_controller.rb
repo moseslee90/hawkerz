@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, except: %i[show index]
   def index
     @comments = Comment.all
   end
@@ -16,15 +17,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # @hawker = Hawker.find(params[:hawker_id])
-    # @comment = @hawker.comments.create(comment_params)
-    # redirect_to hawker_path(@hawker)
-    @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to @comment
-    else
-      render 'new'
-    end
+    @hawker = Hawker.find(params[:hawker_id])
+    @comment = @hawker.comments.new(comment_params)
+    @comment.user = current_user
+    @comment.save
+    # @comment.user = current_user
+    # @comment.save
+    redirect_to hawker_path(@hawker)
+    # @comment = Comment.new(comment_params)
   end
 
   def edit; end
@@ -32,6 +32,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:rating, :text, foods_attributes: [:name])
+    params.require(:comment).permit(:rating, :text, foods_attributes: %i[name _destroy])
   end
 end

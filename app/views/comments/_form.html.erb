@@ -1,18 +1,4 @@
-<%= form_with model: @comment, local: true do |f| %>
-
-	<% if @comment.errors.any? %>
-		<div id="error_explanation">
-			<h2>
-				<%= pluralize(@comment.errors.count, "error") %> prohibited
-				this comment from being saved:
-			</h2>
-			<ul>
-				<% @comment.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+<%= form_with(model: [ @hawker, @comment ], local: true) do |f| %>
 
 	<div class="form-group" >
 		<%= f.label :text %><br />
@@ -21,7 +7,7 @@
 	<div class="form-group row" >
 
 		<%= f.label :rating, class: "col-3" %><br />
-		<%= f.select :ratin, options_for_select([
+		<%= f.select :rating, options_for_select([
                 ['5'],
                 ['4.5'],
                 ['4'],
