@@ -1,8 +1,10 @@
 <div class="form-group image-fields">
 	<%= f.hidden_field :_destroy %>
 	<%= f.label :image_url, 'Insert Photo URL' %>
-	<%= f.text_field :image_url, class: "form-control" %>
-	<div class="btn btn-danger remove-image-field">
-		remove
+	<div class="row">
+		<%= f.text_field :image_url, class: "form-control col-9" %>
+		<div class="btn btn-danger remove-image-field col">
+			remove
+		</div>
 	</div>
 </div>

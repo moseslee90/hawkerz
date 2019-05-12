@@ -65,10 +65,14 @@
 		</div>
 
 		<br>
-
-		<%= f.fields_for :images do |builder| %>
-			<%= render 'image_fields', :f => builder %>
-		<% end %>
+		<div id="image-forms">
+			<%= f.fields_for :images do |builder| %>
+				<%= render 'image_fields', :f => builder %>
+			<% end %>
+			<div class="btn btn-primary" id="add-image-field-button">
+				Add Image
+			</div>
+		</div>
 
 		<br>
 
