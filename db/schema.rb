@@ -66,6 +66,5 @@ ActiveRecord::Schema.define(version: 2019_05_11_065702) do
   end
 
   add_foreign_key "comments", "hawkers"
-  add_foreign_key "comments", "users"
   add_foreign_key "foods", "comments"
 end
