@@ -26,11 +26,6 @@
 		</div>
 
 		<div class="form-group">
-			<%= f.label :address, 'Address:' %><br/>
-			<%= f.text_field :address, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
 			<%= f.label :hero_image_url, 'Hero Image URL:' %><br/>
 			<%= f.text_field :hero_image_url, class: "form-control" %>
 		</div>
@@ -76,21 +71,24 @@
 			</div>
 		<% end %>
 
-		<br>
+		<div class="pac-card" id="pac-card">
+			<%= f.label :address, 'Address:' %><br/>
+			<div id="pac-container">
+				<%# <input id="pac-input" type="text" class= "form-control" name="" placeholder="Enter a location"> %>
+				<%= f.text_field :address, class: "form-control", id: "pac-input" %>
+				<%# <%= f.hidden_field 'address', id: 'address' %>
+				<%= f.hidden_field 'latitude', id: 'lat' %>
+				<%= f.hidden_field 'longitude', id: 'lng' %>
+			</div>
+		</div>
+
+		<br/>
 
 		<div id="map"></div>
 		<div id="infowindow-content">
 			<img src="" width="16" height="16" id="place-icon">
 			<span id="place-name"  class="title"></span><br>
 			<span id="place-address"></span>
-		</div>
-
-		<div class="pac-card" id="pac-card">
-			<div id="pac-container">
-				<input id="pac-input" type="text" name="" placeholder="Enter a location">
-				<%= f.hidden_field 'latitude', id: 'lat' %>
-				<%= f.hidden_field 'longitude', id: 'lng' %>
-			</div>
 		</div>
 
 		<br>

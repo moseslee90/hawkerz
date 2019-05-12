@@ -37,6 +37,27 @@ function iHateRuby() {
     var place = autocomplete.getPlace();
     var lat = place.geometry.location.lat();
     var lng = place.geometry.location.lng();
+    var address = place.address_components;
+    var addressString = "";
+    if (address[0] != undefined) {
+      var address1 = address[0].long_name;
+      addressString = addressString + address1;
+    }
+    if (address[1] != undefined) {
+      var address2 = address[1].long_name;
+      addressString = addressString + ", " + address2;
+    }
+    if (address[3] != undefined) {
+      var address3 = address[3].long_name;
+      addressString = addressString + ", " + address3;
+    }
+    if (address[5] != undefined) {
+      var address4 = address[5].long_name;
+      addressString = addressString + ", " + address4;
+    }
+
+    console.log("formatted address: ");
+    console.log(addressString);
     if (!place.geometry) {
       // User entered the name of a Place that was not suggested and
       // pressed the Enter key, or the Place Details request failed.
@@ -46,6 +67,7 @@ function iHateRuby() {
 
     document.getElementById("lat").value = lat;
     document.getElementById("lng").value = lng;
+    document.getElementById("pac-input").value = addressString;
 
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
