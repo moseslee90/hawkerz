@@ -108,6 +108,15 @@ function remove_image_fields() {
   parent.hidden = true;
 }
 
+function remove_food_fields() {
+  console.log(this);
+  let parent = this.parentNode.parentNode;
+  console.log(parent);
+  console.log(parent.childNodes[1]);
+  parent.childNodes[1].value = "1";
+  parent.hidden = true;
+}
+
 function add_image_fields() {
   console.log(this);
   let parent = this.parentNode;
@@ -163,6 +172,15 @@ function attachEventListeners() {
       const button = removeImageButtons[i];
       button.addEventListener("click", remove_image_fields);
     }
+  }
+  if (document.getElementsByClassName('remove-food-field')[0] != undefined) {
+    let removeFoodButtons = document.getElementsByClassName('remove-food-field');
+    for (let i = 0; i < removeFoodButtons.length; i++) {
+      const button = removeFoodButtons[i];
+      button.addEventListener("click", remove_food_fields);
+    }
+  }
+  if (document.getElementById("add-image-field-button") != undefined) {
     let addImageButton = document.getElementById("add-image-field-button");
     addImageButton.addEventListener("click", add_image_fields);
   }
