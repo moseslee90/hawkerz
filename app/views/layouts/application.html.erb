@@ -14,44 +14,42 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	</head>
 
-
 	<body>
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <div class="d-flex flex-grow-1">
-                <a class="navbar-brand d-none d-lg-inline-block" href="/">
-                    <i class="fas fa-home"></i>
-                </a>
-                <a class="navbar-brand-two mx-auto mt-2 d-lg-none d-inline-block text-body text-decoration-none" href="#">
-                    <i class="fas fa-home"></i>
-                </a>
-                <div class="w-100 text-right">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-                <ul class="navbar-nav ml-auto flex-nowrap">
-                <% if user_signed_in? %>
-                    <li class="nav-item m-3">
-                        <%= link_to('Login', new_user_session_path, class: 'nav-link-color')  %>  
-                    </li>
-                    <li class="nav-item m-3">
-                        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'nav-link-color') %>        
-                    </li>
-                <% else %>
-                    <li class="nav-item m-3">
-                        <%= link_to('Login', new_user_session_path, class: 'nav-link-color')  %>
-                    </li>
-                    <li class="nav-item m-3">
-                        <%= link_to('Sign up', new_user_registration_path, class: 'nav-link-color')  %>
-                    </li>
-                <% end %>
-                </ul>
-            </div>
-        </nav>
-        
-        
+			<div class="d-flex flex-grow-1">
+				<a class="navbar-brand d-none d-lg-inline-block" href="/">
+					<i class="fas fa-home"></i>
+				</a>
+				<a class="navbar-brand-two mx-auto mt-2 d-lg-none d-inline-block text-body text-decoration-none" href="#">
+					<i class="fas fa-home"></i>
+				</a>
+				<div class="w-100 text-right">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+				<ul class="navbar-nav ml-auto flex-nowrap">
+					<% if user_signed_in? %>
+						<li class="nav-item m-3">
+							<%= link_to('Login', new_user_session_path, class: 'nav-link-color')  %>
+						</li>
+						<li class="nav-item m-3">
+							<%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'nav-link-color') %>
+						</li>
+					<% else %>
+						<li class="nav-item m-3">
+							<%= link_to('Login', new_user_session_path, class: 'nav-link-color')  %>
+						</li>
+						<li class="nav-item m-3">
+							<%= link_to('Sign up', new_user_registration_path, class: 'nav-link-color')  %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</nav>
+
 		<%= yield %>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
