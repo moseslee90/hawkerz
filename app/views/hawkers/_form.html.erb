@@ -37,7 +37,8 @@
 
 		<div class="form-group">
 			<%= f.label :opening_hours, 'Opening Hours' %>
-			<%= select_tag(:opening_hours, options_for_select([
+			<%= f.select :opening_hours, options_for_select([
+                [@hawker.opening_hours],
                 ['0400'],
                 ['0500'],
                 ['0600'],
@@ -45,12 +46,13 @@
                 ['0800'],
                 ['0900'],
                 ['1000'],
-            ]), class: "form-control") %>
+            ]), class: "form-control" %>
 		</div>
 
 		<div class="form-group">
 			<%= f.label :closing_hours, 'Closing Hours' %>
-			<%= select_tag(:closing_hours, options_for_select([
+			<%= f.select :closing_hours, options_for_select([
+                [@hawker.closing_hours],
                 ['1900'],
                 ['2000'],
                 ['2100'],
@@ -59,7 +61,7 @@
                 ['0000'],
                 ['0100'],
                 ['0200']
-            ]), class: "form-control") %>
+            ]), class: "form-control" %>
 		</div>
 
 		<br>
@@ -90,7 +92,6 @@
 		</div>
 
 		<br>
-
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<%= f.submit class: "btn btn-primary" %>
 	</div>
 <% end %>
