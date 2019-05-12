@@ -96,3 +96,75 @@ function iHateRuby() {
     infowindow.open(map, marker);
   });
 }
+
+
+
+function remove_image_fields() {
+  console.log(this);
+  let parent = this.parentNode.parentNode;
+  console.log(parent);
+  console.log(parent.childNodes[1]);
+  parent.childNodes[1].value = "1";
+  parent.hidden = true;
+}
+
+function add_image_fields() {
+  console.log(this);
+  let parent = this.parentNode;
+  let last = parent.childNodes.length - 2
+  let secondLast = parent.childNodes.length - 4;
+  let thirdLast = parent.childNodes.length - 6;
+
+  // let newImageFieldID = parent.childNodes[secondLast].cloneNode(true);
+  let newImageField = parent.childNodes[thirdLast].cloneNode(true);
+
+  newImageField.removeAttribute("hidden");
+  let blankNode1 = parent.childNodes[0].cloneNode(true);
+  let blankNode2 = parent.childNodes[0].cloneNode(true);
+  let blankNode3 = parent.childNodes[0].cloneNode(true);
+
+  //populating newImageFieldID with new values
+
+  // currentIdTag = newImageFieldID.id.split("_")[3];
+  // newIdTag = parseInt(currentIdTag) + 1;
+
+  //done populating newImageFieldID with new values
+  //begin populating newImageField with new values
+  let firstInputField = newImageField.childNodes[1];
+  let currentIdTag = firstInputField.id.split("_")[3];
+  let newIdTag = parseInt(currentIdTag) + 1;
+  firstInputField.name = "hawker[images_attributes][" + newIdTag + "][_destroy]";
+  firstInputField.id = "hawker_images_attributes_" + newIdTag + "__destroy";
+  let secondInputField = newImageField.childNodes[3];
+  secondInputField.setAttribute("for", "hawker_images_attributes_" + newIdTag + "_image_url");
+  let thirdInputField = newImageField.childNodes[5];
+  let thirdInputField1 = thirdInputField.childNodes[1]
+  thirdInputField1.setAttribute("value", "");
+  thirdInputField1.setAttribute("name", "hawker[images_attributes][" + newIdTag + "][image_url]");
+  thirdInputField1.setAttribute("id", "hawker_images_attributes_" + newIdTag + "_image_url");
+  let thirdInputFieldButton = thirdInputField.childNodes[3];
+  thirdInputFieldButton.addEventListener("click", remove_image_fields)
+
+
+  //done populating newImageField with new values
+
+  parent.insertBefore(blankNode1, parent.childNodes[last]);
+  parent.insertBefore(blankNode2, parent.childNodes[last]);
+  parent.insertBefore(blankNode3, parent.childNodes[last]);
+  parent.insertBefore(newImageField, parent.childNodes[last]);
+
+  console.log(thirdInputFieldButton);
+}
+
+function attachEventListeners() {
+  if (document.getElementsByClassName('remove-image-field')[0] != undefined) {
+    let removeImageButtons = document.getElementsByClassName('remove-image-field');
+    for (let i = 0; i < removeImageButtons.length; i++) {
+      const button = removeImageButtons[i];
+      button.addEventListener("click", remove_image_fields);
+    }
+    let addImageButton = document.getElementById("add-image-field-button");
+    addImageButton.addEventListener("click", add_image_fields);
+  }
+}
+window.onload = attachEventListeners;
