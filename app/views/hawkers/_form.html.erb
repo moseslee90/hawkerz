@@ -46,7 +46,7 @@
                 ['0800'],
                 ['0900'],
                 ['1000'],
-            ]), class: "form-control" %>
+            ]), {}, class: "form-control" %>
 		</div>
 
 		<div class="form-group">
@@ -61,17 +61,16 @@
                 ['0000'],
                 ['0100'],
                 ['0200']
-            ]), class: "form-control" %>
+            ]), {}, class: "form-control" %>
 		</div>
 
 		<br>
 
 		<%= f.fields_for :images do |builder| %>
-			<div class="">
-				<%= builder.label :image_url, 'Insert Photo URL' %>
-				<%= builder.text_field :image_url, class: "form-control" %>
-			</div>
+			<%= render 'image_fields', :f => builder %>
 		<% end %>
+
+		<br>
 
 		<div class="pac-card" id="pac-card">
 			<%= f.label :address, 'Address:' %><br/>

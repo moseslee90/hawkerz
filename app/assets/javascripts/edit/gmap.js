@@ -96,3 +96,22 @@ function iHateRuby() {
     infowindow.open(map, marker);
   });
 }
+
+
+
+function remove_image_fields() {
+  console.log(this);
+  let parent = this.parentNode;
+  console.log(parent);
+  console.log(parent.childNodes[1]);
+  parent.childNodes[1].value = "1";
+  parent.hidden = true;
+}
+function attachEventListeners() {
+  let removeImageButtons = document.getElementsByClassName('remove-image-field');
+  for (let i = 0; i < removeImageButtons.length; i++) {
+    const button = removeImageButtons[i];
+    button.addEventListener("click", remove_image_fields);
+  }
+}
+window.onload = attachEventListeners;

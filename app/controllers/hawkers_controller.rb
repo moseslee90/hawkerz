@@ -65,7 +65,7 @@ class HawkersController < ApplicationController
     params.require(:hawker).permit(
       :name, :description, :address, :hero_image_url,
       :opening_hours, :closing_hours, :latitude, :longitude, :site_url,
-      images_attributes: [:image_url]
+      images_attributes: %i[id image_url _destroy]
     )
   end
 end
