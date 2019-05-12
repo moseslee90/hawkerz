@@ -3,6 +3,7 @@
 <h1>
 	Hawker Form
 </h1>
+<%= link_to 'Back to Hawker Display Page', hawker_path(@hawker) %>
 <div id="hawker-edit-map" latitude=<%= @hawker.latitude%> longitude=<%= @hawker.longitude%>></div>
 <%= render 'form' %>
 <%# <script src="/assets/javascripts/edit/gmap.js" type="text/javascript"></script> %>

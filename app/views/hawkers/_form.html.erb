@@ -74,9 +74,7 @@
 		<div class="pac-card" id="pac-card">
 			<%= f.label :address, 'Address:' %><br/>
 			<div id="pac-container">
-				<%# <input id="pac-input" type="text" class= "form-control" name="" placeholder="Enter a location"> %>
 				<%= f.text_field :address, class: "form-control", id: "pac-input" %>
-				<%# <%= f.hidden_field 'address', id: 'address' %>
 				<%= f.hidden_field 'latitude', id: 'lat' %>
 				<%= f.hidden_field 'longitude', id: 'lng' %>
 			</div>
