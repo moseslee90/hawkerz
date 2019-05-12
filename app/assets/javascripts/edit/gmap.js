@@ -117,11 +117,53 @@ function remove_food_fields() {
   parent.hidden = true;
 }
 
-function add_image_fields() {
+function add_food_fields() {
   console.log(this);
   let parent = this.parentNode;
   let last = parent.childNodes.length - 2
   let secondLast = parent.childNodes.length - 4;
+
+  // let newImageFieldID = parent.childNodes[secondLast].cloneNode(true);
+  let newFoodField = parent.childNodes[secondLast].cloneNode(true);
+
+  newFoodField.removeAttribute("hidden");
+  let blankNode1 = parent.childNodes[0].cloneNode(true);
+
+  //populating newImageFieldID with new values
+
+  // currentIdTag = newImageFieldID.id.split("_")[3];
+  // newIdTag = parseInt(currentIdTag) + 1;
+
+  //done populating newImageFieldID with new values
+  //begin populating newImageField with new values
+  let firstInputField = newFoodField.childNodes[1];
+  let currentIdTag = firstInputField.id.split("_")[3];
+  let newIdTag = parseInt(currentIdTag) + 1;
+  firstInputField.name = "comment[foods_attributes][" + newIdTag + "][_destroy]";
+  firstInputField.id = "comment_foods_attributes_" + newIdTag + "__destroy";
+  let thirdInputField = newFoodField.childNodes[3];
+  let thirdInputField0 = thirdInputField.childNodes[1];
+  thirdInputField0.setAttribute("for", "comment_foods_attributes_" + newIdTag + "_name");
+  let thirdInputField1 = thirdInputField.childNodes[3]
+  thirdInputField1.setAttribute("value", "");
+  thirdInputField1.setAttribute("name", "comment[foods_attributes][" + newIdTag + "][name]");
+  thirdInputField1.setAttribute("id", "comment_foods_attributes_" + newIdTag + "_name");
+  let thirdInputFieldButton = thirdInputField.childNodes[5];
+  thirdInputFieldButton.addEventListener("click", remove_food_fields)
+
+
+  //done populating newImageField with new values
+
+  parent.insertBefore(blankNode1, parent.childNodes[last]);
+  parent.insertBefore(newFoodField, parent.childNodes[last]);
+
+  console.log(thirdInputFieldButton);
+}
+
+function add_image_fields() {
+  console.log(this);
+  let parent = this.parentNode;
+  let last = parent.childNodes.length - 2
   let thirdLast = parent.childNodes.length - 6;
 
   // let newImageFieldID = parent.childNodes[secondLast].cloneNode(true);
@@ -183,6 +225,10 @@ function attachEventListeners() {
   if (document.getElementById("add-image-field-button") != undefined) {
     let addImageButton = document.getElementById("add-image-field-button");
     addImageButton.addEventListener("click", add_image_fields);
+  }
+  if (document.getElementById("add-food-field-button") != undefined) {
+    let addImageButton = document.getElementById("add-food-field-button");
+    addImageButton.addEventListener("click", add_food_fields);
   }
 }
 window.onload = attachEventListeners;

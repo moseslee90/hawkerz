@@ -12,9 +12,8 @@ class HawkersController < ApplicationController
   def show
     @hawker = Hawker.find(params[:id])
     @comment = Comment.new
-    3.times do
-      food = @comment.foods.build
-    end
+
+    food = @comment.foods.build
   end
 
   def new

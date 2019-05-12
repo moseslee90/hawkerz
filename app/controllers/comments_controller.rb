@@ -11,9 +11,8 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    3.times do
-      food = @comment.foods.build
-    end
+
+    food = @comment.foods.build
   end
 
   def create
