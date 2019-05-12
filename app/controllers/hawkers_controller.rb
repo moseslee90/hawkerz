@@ -19,9 +19,8 @@ class HawkersController < ApplicationController
 
   def new
     @hawker = Hawker.new
-    3.times do
-      image = @hawker.images.build
-    end
+
+    image = @hawker.images.build
   end
 
   def edit

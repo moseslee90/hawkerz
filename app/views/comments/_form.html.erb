@@ -14,19 +14,35 @@
 		</div>
 	<% end %>
 
-	<p>
+	<div class="form-group" >
 		<%= f.label :text %><br />
-		<%= f.text_field :text %>
-	</p>
-	<p>
-		<%= f.label :rating %><br />
-		<%= f.text_field :rating %>
-	</p>
-	<%= f.fields_for :foods do |builder| %>
-		<p>
-			<%= builder.label :name, "Food"%><br />
-			<%= builder.text_area :name, :rows => 1 %>
-		</p>
-	<% end %>
-	<p><%= f.submit "Submit" %></p>
+		<%= f.text_area :text, class: "form-control", rows: 3 %>
+	</div>
+	<div class="form-group row" >
+
+		<%= f.label :rating, class: "col-3" %><br />
+		<%= f.select :ratin, options_for_select([
+                ['5'],
+                ['4.5'],
+                ['4'],
+                ['3.5'],
+                ['3'],
+                ['2.5'],
+                ['2'],
+                ['1.5'],
+                ['1'],
+                ['0.5'],
+                ['0']
+            ]), {}, class: "form-control col-2" %>
+	</div>
+	<div id="food-forms">
+		<%= f.fields_for :foods do |builder| %>
+			<%= render 'comments/food_fields', :f => builder %>
+		<% end %>
+		<div class="btn btn-primary" id="add-food-field-button">
+			Add More Food
+		</div>
+	</div>
+	<br/>
+	<%= f.submit "Submit Review", class: "btn btn-primary" %>
 <% end %>
