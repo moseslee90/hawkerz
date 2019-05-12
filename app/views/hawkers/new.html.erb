@@ -1,243 +1,86 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <div class="d-flex flex-grow-1">
-         <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-         <a class="navbar-brand d-none d-lg-inline-block" href="#">
-         <i class="fas fa-home"></i>
-         </a>
-         <a class="navbar-brand-two mx-auto mt-2  d-inline-block text-body" href="#" class="text-decoration-none">
-         <b>HAWKERz</b>
-                    <!-- <img src="//placehold.it/40?text=LOGO" alt="logo"> -->
-         </a>
-    <div class="w-100 text-right">
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-         <span class="navbar-toggler-icon"></span>
-         </button>
-    </div>
-</div>
-
-<div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-    <ul class="navbar-nav ml-auto flex-nowrap">
-        <li class="nav-item">
-             <a href="#" class="nav-link m-2 menu-item nav-active">Login</a>
-        </li>
-        <li class="nav-item">
-             <a href="#" class="nav-link m-2 menu-item">Sign Up</a>
-        </li>
-    </ul>
-</div>
-</nav>
-
 <br>
 <br>
 <br>
 
-<form action="/action_page.php" >
-	<div class="form-css">
-  <div class="form-group">
-    <label for="Name">Hawker Centre Name:</label>
-    <input type="Name" class="form-control" id="Name">
-  </div>
-
-  <div class="form-group">
-    <label for="comment">Hawkerz Description:</label>
-    <textarea class="form-control" rows="5" id="comment"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="address">Hawker Centre Address</label>
-    <input type="address" class="form-control" id="address">
-  </div>
-
-<br>
-
-<h6>Is the Hawker Centre 24hrs?</h6>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-  <label class="form-check-label" for="defaultCheck2">
-    No
-  </label>
-</div>
-
-<br>
-
-		<h6>If no, then what is its opening and closing hours?</h6>
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Opening Hours</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>0400</option>
-      <option>0500</option>
-      <option>0600</option>
-      <option>0700</option>
-      <option>0800</option>
-      <option>0900</option>
-      <option>1000</option>
-    </select>
-  </div>
-
-      <div class="form-group">
-    <label for="exampleFormControlSelect1">Closing Hours</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1900</option>
-      <option>2000</option>
-      <option>2100</option>
-      <option>2200</option>
-      <option>2300</option>
-      <option>0000</option>
-      <option>0100</option>
-      <option>0200</option>
-    </select>
-  </div>
-
-  <br>
-
-  <label for="basic-url">Insert Photo URL</label>
-<div class="photo-url-css">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://</span>
-  </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div>
-
-  <label for="basic-url">Insert Photo URL</label>
-<div class="photo-url-css">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://</span>
-  </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div>
-
-  <label for="basic-url">Insert Photo URL</label>
-<div class="photo-url-css">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://</span>
-  </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div>
-
-  <label for="basic-url">Insert Photo URL</label>
-<div class="photo-url-css">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://</span>
-  </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div>
-
-<br>
-
- <div id="map"></div>
-            <div id="infowindow-content">
-            <img src="" width="16" height="16" id="place-icon">
-            <span id="place-name"  class="title"></span><br>
-            <span id="place-address"></span>
-        </div>
-
-        <div class="pac-card" id="pac-card">
-            <div id="pac-container">
-                <input id="pac-input" type="text" name="" placeholder="Enter a location">
-                <input type="hidden" name="latitude" id="lat"/>
-                <input type="hidden" name="longitude" id="lng"/>
-            </div>
-        </div>
-
-<br>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</div>
-</form>
+<%= render 'form' %>
 
 <!-- Footer -->
 <footer class="page-footer font-small pt-4">
-		<div class="footer-css">
+	<div class="footer-css">
 
-  <!-- Footer Elements -->
-  <div class="container">
+		<!-- Footer Elements -->
+		<div class="container">
 
-    <!--Grid row-->
-    <div class="row">
+			<!--Grid row-->
+			<div class="row">
 
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
-      	<br>
+				<!--Grid column-->
+				<div class="col-md-6 mb-4">
+					<br>
 
-        <!-- Form -->
-        <form class="form-inline">
-          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+					<!-- Form -->
+					<form class="form-inline">
+						<input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
             aria-label="Search">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </form>
-        <!-- Form -->
+						<i class="fas fa-search" aria-hidden="true"></i>
+					</form>
+					<!-- Form -->
 
-      </div>
-      <!--Grid column-->
+				</div>
+				<!--Grid column-->
 
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
-      	<br>
-        <form class="input-group">
-          <input type="text" class="form-control form-control-sm" placeholder="Your email"
+				<!--Grid column-->
+				<div class="col-md-6 mb-4">
+					<br>
+					<form class="input-group">
+						<input type="text" class="form-control form-control-sm" placeholder="Your email"
             aria-label="Your email" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-white my-0" type="button">Get Updated</button>
-          </div>
-        </form>
+						<div class="input-group-append">
+							<button class="btn btn-sm btn-outline-white my-0" type="button">Get Updated</button>
+						</div>
+					</form>
 
-      </div>
-      <!--Grid column-->
+				</div>
+				<!--Grid column-->
 
-    </div>
-    <!--Grid row-->
-</div>
-  <!-- Footer Elements -->
-  <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1">
-          <i class="fab fa-google-plus-g"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
-          <i class="fab fa-linkedin-in"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-dribbble mx-1">
-          <i class="fab fa-dribbble"> </i>
-        </a>
-      </li>
-    </ul>
+			</div>
+			<!--Grid row-->
+		</div>
+		<!-- Footer Elements -->
+		<ul class="list-unstyled list-inline text-center">
+			<li class="list-inline-item">
+				<a class="btn-floating btn-fb mx-1">
+					<i class="fab fa-facebook-f"> </i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="btn-floating btn-tw mx-1">
+					<i class="fab fa-twitter"> </i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="btn-floating btn-gplus mx-1">
+					<i class="fab fa-google-plus-g"> </i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="btn-floating btn-li mx-1">
+					<i class="fab fa-linkedin-in"> </i>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="btn-floating btn-dribbble mx-1">
+					<i class="fab fa-dribbble"> </i>
+				</a>
+			</li>
+		</ul>
 
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> HAWKERz.com</a>
-  </div>
-</div>
-  <!-- Copyright -->
-
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2019 Copyright:
+			<a href="https://mdbootstrap.com/education/bootstrap/"> HAWKERz.com</a>
+		</div>
+	</div>
+	<!-- Copyright -->
 
 </footer>
 
