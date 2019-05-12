@@ -140,6 +140,8 @@ function add_image_fields() {
   thirdInputField1.setAttribute("value", "");
   thirdInputField1.setAttribute("name", "hawker[images_attributes][" + newIdTag + "][image_url]");
   thirdInputField1.setAttribute("id", "hawker_images_attributes_" + newIdTag + "_image_url");
+  let thirdInputFieldButton = thirdInputField.childNodes[3];
+  thirdInputFieldButton.addEventListener("click", remove_image_fields)
 
 
   //done populating newImageField with new values
@@ -147,8 +149,7 @@ function add_image_fields() {
   parent.insertBefore(newImageField, parent.childNodes[last]);
   parent.insertBefore(newImageFieldID, parent.childNodes[last]);
 
-  console.log(newImageFieldID);
-  console.log(parent.childNodes[last]);
+  console.log(thirdInputFieldButton);
 }
 
 function attachEventListeners() {
