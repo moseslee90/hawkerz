@@ -115,22 +115,24 @@ function add_image_fields() {
   let secondLast = parent.childNodes.length - 4;
   let thirdLast = parent.childNodes.length - 6;
 
-  let newImageFieldID = parent.childNodes[secondLast].cloneNode(true);
+  // let newImageFieldID = parent.childNodes[secondLast].cloneNode(true);
   let newImageField = parent.childNodes[thirdLast].cloneNode(true);
+
+  newImageField.removeAttribute("hidden");
+  let blankNode1 = parent.childNodes[0].cloneNode(true);
+  let blankNode2 = parent.childNodes[0].cloneNode(true);
+  let blankNode3 = parent.childNodes[0].cloneNode(true);
 
   //populating newImageFieldID with new values
 
-  currentIdTag = newImageFieldID.id.split("_")[3];
-  newIdTag = parseInt(currentIdTag) + 1;
-
-  newImageFieldID.name = "hawker[images_attributes][" + newIdTag + "][id]";
-  newImageFieldID.id = "hawker_images_attributes_" + newIdTag + "_id";
-  let newIdValue = new Date().getTime();
-  newImageFieldID.value = newIdValue;
+  // currentIdTag = newImageFieldID.id.split("_")[3];
+  // newIdTag = parseInt(currentIdTag) + 1;
 
   //done populating newImageFieldID with new values
   //begin populating newImageField with new values
   let firstInputField = newImageField.childNodes[1];
+  let currentIdTag = firstInputField.id.split("_")[3];
+  let newIdTag = parseInt(currentIdTag) + 1;
   firstInputField.name = "hawker[images_attributes][" + newIdTag + "][_destroy]";
   firstInputField.id = "hawker_images_attributes_" + newIdTag + "__destroy";
   let secondInputField = newImageField.childNodes[3];
@@ -146,19 +148,23 @@ function add_image_fields() {
 
   //done populating newImageField with new values
 
+  parent.insertBefore(blankNode1, parent.childNodes[last]);
+  parent.insertBefore(blankNode2, parent.childNodes[last]);
+  parent.insertBefore(blankNode3, parent.childNodes[last]);
   parent.insertBefore(newImageField, parent.childNodes[last]);
-  parent.insertBefore(newImageFieldID, parent.childNodes[last]);
 
   console.log(thirdInputFieldButton);
 }
 
 function attachEventListeners() {
-  let removeImageButtons = document.getElementsByClassName('remove-image-field');
-  for (let i = 0; i < removeImageButtons.length; i++) {
-    const button = removeImageButtons[i];
-    button.addEventListener("click", remove_image_fields);
+  if (document.getElementsByClassName('remove-image-field')[0] != undefined) {
+    let removeImageButtons = document.getElementsByClassName('remove-image-field');
+    for (let i = 0; i < removeImageButtons.length; i++) {
+      const button = removeImageButtons[i];
+      button.addEventListener("click", remove_image_fields);
+    }
+    let addImageButton = document.getElementById("add-image-field-button");
+    addImageButton.addEventListener("click", add_image_fields);
   }
-  let addImageButton = document.getElementById("add-image-field-button");
-  addImageButton.addEventListener("click", add_image_fields);
 }
 window.onload = attachEventListeners;
