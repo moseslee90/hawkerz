@@ -13,6 +13,7 @@ class HawkersController < ApplicationController
   def show
     @hawker = Hawker.find(params[:id])
     @comment = @hawker.comments.build
+    @comments = @hawker.comments.all
     food = @comment.foods.build
   end
 
@@ -24,10 +25,6 @@ class HawkersController < ApplicationController
 
   def edit
     @hawker = Hawker.find(params[:id])
-    @comment = Comment.new
-    3.times do
-      food = @comment.foods.build
-    end
   end
 
   def create
