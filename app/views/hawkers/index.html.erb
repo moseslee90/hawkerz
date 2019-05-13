@@ -47,8 +47,8 @@
 				</select>
 			</div>
 			<%= form_tag(hawkers_path method: :get) do %>
-				Store <%= text_field_tag :name %>
-				<%= submit_tag 'Search' %>
+				Store <%= text_field_tag :name, params[:name] %>
+				<%= submit_tag 'Search', name: nil %>
 			<% end %>
 		</div>
 		<div class="col-lg-2">
