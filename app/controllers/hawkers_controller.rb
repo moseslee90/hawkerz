@@ -7,7 +7,11 @@ class HawkersController < ApplicationController
   end
 
   def index
-    @hawkers = Hawker.all
+    @hawkers = if params[:name]
+                 Hawker.where('name LIKE ?', "%#{params[:name]}%")
+               else
+                 Hawker.all
+               end
   end
 
   def show
