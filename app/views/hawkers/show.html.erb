@@ -39,7 +39,7 @@
 							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i>&nbsp;3.2&nbsp;&nbsp;&nbsp;&nbsp;
 						<i class="far fa-comments"></i>
 						<%#The number will be replaced with the total review number%>
-						&nbsp;<span>4</span>&nbsp;reviews
+						&nbsp;<span><%= (@hawker.comments.count).to_i - 1 %></span>&nbsp;reviews
 						<br>
 						<br>
 						<%= @hawker.description%>
@@ -137,7 +137,7 @@
 					<p><%= link_to(@hawker.site_url, @hawker.name) %></p>
 				</div>
 				<div class="row my-3 p-3 show-width">
-				<button type="button" class="btn btn-success"><%= link_to 'Edit Hawker', edit_hawker_path, class: 'show-edit-button' %></button>
+					<button type="button" class="btn btn-success"><%= link_to 'Edit Hawker', edit_hawker_path, class: 'show-edit-button' %></button>
 				</div>
 			</div>
 
